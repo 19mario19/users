@@ -15,8 +15,8 @@
           <h1>Users</h1>
         </Link>
         <div class="links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <Link to="users/">Home</Link>
+          <Link to="users/about">About</Link>
         </div>
       </nav>
       <div>
