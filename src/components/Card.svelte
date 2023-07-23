@@ -12,7 +12,7 @@
 </script>
 
 {#if id}
-  <Link to={`/${id}`}>
+  <Link to={`users/${id}`}>
     <div class="card">
       <h3>{index + 1}. {name}</h3>
       <h4>Age: {age}</h4>

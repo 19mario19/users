@@ -33,7 +33,7 @@
     <p>Something went wrong... 🙄</p>
     <p>Mostly because of refresh</p>
   {/if}
-  <Link to="/">
+  <Link to="users/">
     <button>Go Home</button>
   </Link>
 </div>

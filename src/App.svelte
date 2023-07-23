@@ -11,7 +11,7 @@
   <Router>
     <main>
       <nav>
-        <Link to="/">
+        <Link to="users/">
           <h1>Users</h1>
         </Link>
         <div class="links">
@@ -21,9 +21,9 @@
       </nav>
       <div>
         <div class="routes">
-          <Route path="/:id"><CardDetails /></Route>
-          <Route path="/about"><About /></Route>
-          <Route path="/"><Home /></Route>
+          <Route path="users/:id"><CardDetails /></Route>
+          <Route path="users/about"><About /></Route>
+          <Route path="users/"><Home /></Route>
           <Route path="*"><NotFound /></Route>
         </div>
       </div>
