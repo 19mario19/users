@@ -4,7 +4,7 @@
 
 <div class="not-found">
   <h1>This page does not exist</h1>
-  <Link><button>Go home</button></Link>
+  <Link to="/users/"><button>Go home</button></Link>
 </div>
 
 <style>
@@ -12,13 +12,15 @@
         text-align: center;
     }
     button {
-        cursor: pointer;
-        background-color: white;
-        padding: .1rem .2rem;
-        border-radius: 10px;
-        border: 1px solid;
-        transition: all 350ms ease-in-out;
-    }
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    margin-top: 1rem;
+  }
     button:active {
         transform:scale(.85);
     }

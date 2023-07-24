@@ -1,29 +1,37 @@
 <script>
   import { Router, Link, Route } from "svelte-routing"
-  import Home from "./pages/Home.svelte"
+  import Users from "./pages/Users.svelte"
   import CardDetails from "./pages/CardDetails.svelte"
   import About from "./pages/About.svelte"
   import NotFound from "./pages/NotFound.svelte"
-
+  import Home from "./pages/Home.svelte"
 </script>
 
 <div class="App">
   <Router>
     <main>
       <nav>
-        <Link to="users/">
-          <h1>Users</h1>
+        <Link to="/users/">
+          <h1>WebPro</h1>
         </Link>
         <div class="links">
-          <Link to="users/">Home</Link>
-          <Link to="users/about">About</Link>
+          <Link to="/users/">
+            <p>Home</p>
+          </Link>
+          <Link to="/users/list">
+            <p>Users</p>
+          </Link>
+          <Link to="/users/about">
+            <p>About</p>
+          </Link>
         </div>
       </nav>
       <div>
         <div class="routes">
-          <Route path="users/:id"><CardDetails /></Route>
-          <Route path="users/about"><About /></Route>
-          <Route path="users/"><Home /></Route>
+          <Route path="/users/:id"><CardDetails /></Route>
+          <Route path="/users/about"><About /></Route>
+          <Route path="/users/list/"><Users /></Route>
+          <Route path="/users/"><Home /></Route>
           <Route path="*"><NotFound /></Route>
         </div>
       </div>
@@ -40,7 +48,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
-    background-color: rgba(196, 200, 204, 0.126);
+    background-color: rgba(222, 223, 225, 0.126);
     margin-bottom: 2rem;
   }
 
@@ -55,6 +63,13 @@
   .links {
     display: flex;
     gap: 1rem;
+  }
+  p {
+    transition: all 350ms ease-in;
+  }
+
+  p:hover {
+    color: red;
   }
 
   .routes {

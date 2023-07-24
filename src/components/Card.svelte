@@ -28,12 +28,14 @@
   .card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 1.2rem;
     border-radius: 6px;
-    background-color: #eaf1f9;
+    background-color: #eff2f5;
     color: #333;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    min-height: 200px;
   }
 
   .card:hover {

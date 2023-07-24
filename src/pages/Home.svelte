@@ -1,32 +1,77 @@
 <script>
-  import CardList from "../components/CardList.svelte"
-  import { UserStore } from "../stores/UserStore"
-
-
-  async function getData() {
-    const response = await fetch("https://baza-user.onrender.com/users")
-    if (response.ok) {
-      const json = await response.json()
-      UserStore.update(() => [...json])
-    } else {
-      console.log("Could not fetch the data")
-    }
-  }
-  getData()
-  
-
+  import heroImage from "../assets/hero.png"
+  import { Link } from "svelte-routing"
 </script>
 
-{#if $UserStore.length > 0}
-  <CardList users={$UserStore} />
-{:else}
-  <p class="loading">Loading...</p>
-{/if}
+<section class="hero-section">
+  <div class="description">
+    <h1>Welcome to WebPro</h1>
+    <p>
+      We have a curated list of the best people in software engineering and web
+      development. Whether you're looking for talented developers, designers, or
+      tech enthusiasts, you've come to the right place.
+    </p>
+    <div class="buttons">
+      <Link to="/users/list/">
+        <button>View List</button>
+      </Link>
+    </div>
+  </div>
+  <div class="image">
+    <img src={heroImage} alt="" />
+  </div>
+</section>
 
 <style>
-  .loading {
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 2rem;
-    font-size: 40px;
-    text-align: center;
+    background-color: #f9f9f9;
+  }
+
+  .description {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .description h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .description p {
+    font-size: 1.4rem;
+    color: #666;
+  }
+
+  .image {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .buttons {
+    display: flex;
+    widows: 100%;
+  }
+  button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    margin-top: 1rem;
   }
 </style>

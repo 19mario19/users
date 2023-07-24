@@ -31,10 +31,9 @@
     </div>
   {:else}
     <p>Something went wrong... 🙄</p>
-    <p>Mostly because of refresh</p>
   {/if}
-  <Link to="users/">
-    <button>Go Home</button>
+  <Link to="/users/list/">
+    <button>Go Back</button>
   </Link>
 </div>
 
@@ -45,10 +44,12 @@
 
   button {
     cursor: pointer;
-    background-color: rgb(248, 247, 246);
-    padding: 0.2rem 0.3rem;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 6px;
-    border: 1px solid;
-    margin: 1rem 0;
+    border: none;
+    margin-top: 1rem;
   }
 </style>
