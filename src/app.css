@@ -37,6 +37,22 @@ dd {
   padding: 0;
 }
 
+textarea {
+    appearance: none;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    overflow: auto;
+  }
+
+
 /* Reset List Styles */
 ul,
 ol {
@@ -85,10 +101,21 @@ html {
   user-select: none;
 }
 
-button{
-  transition: all 350ms ease-in-out;
-}
-button:hover {
-  opacity: .9;
-  transform: scale(1.02);
-}
+    button {
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      margin-top: 1rem;
+    }
+  
+    button:active {
+      transform: scale(0.85);
+    }
+  
+    button:hover {
+      opacity: 1.55;
+    }

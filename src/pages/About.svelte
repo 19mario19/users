@@ -1,66 +1,38 @@
 <script>
-  import Counter from "../stores/testing/Counter.svelte"
-  import { count } from "../stores/testing/store"
+  // Import required modules
+  import { Link } from "svelte-routing"
 
-  let byHowMuch = 1
-
-  // functions to update the count
-  function increment(){
-    count.update(prev => prev + byHowMuch)
-  }
-  function decrement(){
-    count.update(prev => prev - byHowMuch)
-  }
-
+  // Define the description for the website
+  const description = `Welcome to our website! We are proud to present a list of the best people in software engineering and web development. Our mission is to showcase the incredible talents and skills of individuals who have made significant contributions to the tech industry. Join us in celebrating the brilliance of these amazing professionals.`
 </script>
 
-<main>
-
-    <h2>Store count: {$count}</h2>
-    <h3>By how much?</h3>
-    <form >
-        <label>
-            <p>{byHowMuch}</p>
-            <input type="range" bind:value={byHowMuch} min="0" max="100">
-        </label>
-    </form>
-    <button on:click={increment}>+</button>
-    <button on:click={decrement}>-</button>
-
-  <Counter />
-  <h1>About</h1>
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quaerat
-    est voluptatibus esse autem saepe modi quis, dignissimos quos officiis,
-    eveniet eos, perferendis sit ab soluta asperiores molestiae fuga natus ad
-    sed eius dolore cupiditate beatae reprehenderit! Ad, debitis laboriosam.
-    Nulla assumenda expedita odio culpa sit eius natus cupiditate enim delectus
-    error sapiente quaerat, vitae obcaecati magni doloribus quod illum eum
-    maiores, id est qui optio incidunt nam dolor. Aspernatur soluta corrupti
-    tempora perferendis. Minima quaerat, quisquam deleniti vero id molestias
-    modi aliquid. Libero nulla id facere labore voluptas. Eaque natus omnis
-    voluptatem veritatis cumque aut, quam ea! Maxime, deleniti.
-  </p>
-  
-</main>
+<div class="about">
+  <h1>About Us</h1>
+  <p>{description}</p>
+  <Link to="/users/list/">
+    <button> Explore Our List </button>
+  </Link>
+</div>
 
 <style>
-    main {
-        text-align: center;
-    }
-    button {
-        aspect-ratio: 1;
-        height: 50px;
-        border-radius: 50%;
-        background-color: black;
-        color: white;
-    }
-      input {
-        background-color: white;
-        padding: 1rem;
-        margin: .5rem 0;
-        border: 1px solid;
+  .about {
+    text-align: center;
+    padding: 2rem;
+  }
 
-    }
-    
+  h1 {
+    font-size: 2rem;
+    color: var(--color-blue);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
 </style>

@@ -5,6 +5,7 @@
   import About from "./pages/About.svelte"
   import NotFound from "./pages/NotFound.svelte"
   import Home from "./pages/Home.svelte"
+  import AddUser from "./pages/AddUser.svelte"
 </script>
 
 <div class="App">
@@ -21,6 +22,9 @@
           <Link to="/users/list">
             <p>Users</p>
           </Link>
+          <Link to="/users/add">
+            <p>Add</p>
+          </Link>
           <Link to="/users/about">
             <p>About</p>
           </Link>
@@ -31,6 +35,7 @@
           <Route path="/users/:id"><CardDetails /></Route>
           <Route path="/users/about"><About /></Route>
           <Route path="/users/list/"><Users /></Route>
+          <Route path="/users/add/"><AddUser /></Route>
           <Route path="/users/"><Home /></Route>
           <Route path="*"><NotFound /></Route>
         </div>
@@ -57,7 +62,7 @@
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .links {

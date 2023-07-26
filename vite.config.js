@@ -5,5 +5,5 @@ import BASE_URL from "../users/src/globalVariable"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
-  base: BASE_URL,
+  base: "/",
 })
